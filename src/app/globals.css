@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+* {
+  font-family: "source-sans", sans-serif;
+  outline: none;
+  -webkit-user-drag: none;
+}
+
+:root {
+  --primary-color: #cd3232;
+  --secondary-color: #8a2525;
+  --dark-900-color: #0a0d12;
+  --dark-800-color: #0f1219;
+  --dark-700-color: #141820;
+  --dark-600-color: #1a202c;
+  --dark-500-color: #212935;
+  --dark-400-color: #2d3748;
+  --dark-300-color: #4a5568;
+  --dark-200-color: #a0aec0;
+  --dark-100-color: #edf2f7;
+}
+
+@theme {
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+  --color-dark-900: var(--dark-900-color);
+  --color-dark-800: var(--dark-800-color);
+  --color-dark-700: var(--dark-700-color);
+  --color-dark-600: var(--dark-600-color);
+  --color-dark-500: var(--dark-500-color);
+  --color-dark-400: var(--dark-400-color);
+  --color-dark-300: var(--dark-300-color);
+  --color-dark-200: var(--dark-200-color);
+  --color-dark-100: var(--dark-100-color);
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1380px;
+}
+
+@utility container {
+  @apply mx-auto w-full max-w-312 max-2xl:max-w-285 max-xl:max-w-235 max-lg:max-w-180 max-md:max-w-135 max-sm:w-[93vw];
+}
+
+@utility text-gradient {
+  color: transparent;
+  background-clip: text;
+}
+
+*::selection {
+  background-color: var(--primary-color);
+  color: var(--color-dark-100);
+}
+
+*::-webkit-scrollbar {
+  appearance: none;
+  width: 0.3rem;
+  background-color: var(--color-dark-500);
+  border-right: 1px solid var(--color-dark-400);
+  border-left: 1px solid var(--color-dark-400);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  @apply bg-gradient-to-b from-primary via-secondary to-secondary border-1 border-primary;
+}
+
+@font-face {
+  font-family: "source-sans";
+  src: "./font/SourceSans3";
+}
+
+@utility flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@utility dir-rtl {
+  direction: rtl;
+}
+
+@utility dir-ltr {
+  direction: ltr;
+}
+
+@utility border-primary {
+  border: 1px solid var(--color-primary);
+}
+
+@utility border-t-primary {
+  border-top: 1px solid var(--color-primary);
+}
+
+@utility border-r-primary {
+  border-right: 1px solid var(--color-primary);
+}
+
+@utility border-l-primary {
+  border-left: 1px solid var(--color-primary);
+}
+
+@utility border-b-primary {
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none !important;
+  appearance: none !important;
+}
+
+/* @font-face {
+  font-family: "source-sans-pro";
+  src: url("/fonts/source-sans-pro.woff2") format("woff2");
+} */
