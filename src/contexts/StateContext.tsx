@@ -19,16 +19,6 @@ export function StateProvider({ children }: { children: ReactNode }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const audio = audioRef.current;
 
-  // useEffect(() => {
-  //   if (!audio) return;
-  //   if (state.repeat === "none") {
-  //     audio.onended = () => {
-  //       dispatch({ type: "PAUSE_MUSIC" });
-  //       console.log("end!");
-  //     };
-  //   }
-  //   console.log("huh?");
-  // }, []);
   useEffect(() => {
     if (!audio) return;
     const ctrl = new AbortController();
@@ -49,8 +39,12 @@ export function StateProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (!audio) return;
-    audio.src = state.allMusics[state.musicIndex]?.url || "#";
-    audio.play?.();
+    const newSrc = state.allMusics[state.musicIndex]?.url;
+    if (!newSrc) return;
+    audio.pause?.();
+    audio.src = newSrc;
+    audio.load();
+    audio.oncanplay = () => audio.play?.();
     dispatch({ type: "PLAY_MUSIC" });
   }, [state.musicIndex]);
 

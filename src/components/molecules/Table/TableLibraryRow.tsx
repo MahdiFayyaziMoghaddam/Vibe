@@ -45,7 +45,7 @@ export default function TableLibraryRow({
           selected
             ? "bg-primary/10! hover:bg-primary/10! *:border-primary/90! *:border-[1px]! *:border-y-[1.8px]! *:first:border-l-[1.8px]! *:last:border-r-[1.8px]!"
             : "bg-dark-900 hover:bg-dark-600/70 *:border-[1px] *:border-dark-400!"
-        }`}
+        } max-sm:border-none!`}
         onMouseOver={() => !selected && setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >
@@ -77,7 +77,7 @@ export default function TableLibraryRow({
           </div>
         </td>
         <td className="p-2 max-sm:py-0.5 max-sm:px-1">
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2.5 max-sm:gap-1.5">
             <Image
               className="size-[2.5rem]! aspect-square! rounded-[0.2rem] border-[1px] border-dark-300 max-sm:size-[1.8rem]! overflow-hidden"
               src={imgSrc}

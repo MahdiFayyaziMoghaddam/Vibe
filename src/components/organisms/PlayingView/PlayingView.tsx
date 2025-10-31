@@ -36,7 +36,7 @@ export default function PlayingView() {
       {/* Playing View */}
       <div
         className={`h-full bg-dark-800 border-l-1 border-l-dark-400 overflow-y-auto z-40 scrollbar-hidden transition-all ${
-          !isShowPlayingView ? "-mr-90 " : ""
+          !isShowPlayingView ? "-mr-91" : ""
         }`}
       >
         <div className="relative size-90! max-sm:size-70! border-b-1 border-b-dark-400 overflow-hidden ">
